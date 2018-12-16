@@ -49,7 +49,19 @@
     $(function(){
       $('#form').on('submit',function(e){
           console.log('ok')
-          return false;
+          e.preventDefault()
+          // return false;
+
+          $.ajax({
+            url:'/register',
+            data:$('#form').serialize(),
+            type:'POST',
+           
+            dataType:'json',
+            success:function(res){
+              console.log(res)
+            }
+          })
       })
     }) 
   </script>

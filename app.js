@@ -11,7 +11,7 @@ app.use('/node_modules',express.static('./node_modules'))
 
 //用户请求的 项目首页
 app.get('/',(req,res)=>{
-    res.render('index.ejs',{})
+    res.render('./index.ejs',{})
 })
 
 //用户请求的  注册页面
@@ -26,7 +26,7 @@ app.get('/login',(req,res)=>{
 
 //注册新用户
 app.post('/register',(req,res)=>{
-    res.send({msg:'ok',static:'200'})
+    res.send({msg:'ok',status:200})
 })
 
     //使用render函数之前  一定要保证安装 配置了ejs模板引擎
